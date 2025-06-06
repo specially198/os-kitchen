@@ -34,36 +34,24 @@
             z-index: 1000;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 0;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
+            display: block;
             text-decoration: none;
         }
 
         .logo img {
-            height: 60px;
-            width: 90px;
-            margin-right: 0.5rem;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .logo-text {
-            font-size: 1.2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #FF7A00, #FF5722);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            width: 300px;
+            height: 200px;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -175,7 +163,7 @@
         .hero {
             background: linear-gradient(135deg, #FF7A00 0%, #FF5722 50%, #FFAB00 100%);
             color: white;
-            padding: 140px 0 100px;
+            padding: 250px 0 100px; /* 増加したヘッダーの高さに合わせて調整 */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -231,13 +219,15 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .feature-card {
             background: white;
-            padding: 2.5rem;
+            padding: 3rem;
             border-radius: 20px;
             text-align: center;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
@@ -248,19 +238,6 @@
         .feature-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
-        }
-
-        .feature-icon {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, #FF7A00, #FF5722);
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            box-shadow: 0 8px 30px rgba(255, 122, 0, 0.3);
         }
 
         .feature-card h3 {
@@ -322,57 +299,30 @@
         }
 
         .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            display: flex;
+            justify-content: center;
         }
 
         .pricing-card {
             background: white;
-            padding: 2.5rem;
+            padding: 3rem;
             border-radius: 25px;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.12);
             position: relative;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
-        }
-
-        .pricing-card.featured {
-            border: 2px solid #FF7A00;
-            transform: scale(1.05);
-            background: linear-gradient(135deg, #ffffff 0%, #FFF8F0 100%);
-        }
-
-        .pricing-card.featured::before {
-            content: '人気No.1';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #FF7A00, #FF5722);
-            color: white;
-            padding: 8px 25px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            box-shadow: 0 5px 20px rgba(255, 122, 0, 0.3);
+            max-width: 500px;
         }
 
         .pricing-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
             color: #1a202c;
             font-weight: 600;
         }
 
         .price {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
             background: linear-gradient(135deg, #FF7A00, #FF5722);
             -webkit-background-clip: text;
@@ -386,7 +336,7 @@
         }
 
         .price-unit {
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: #718096;
             font-weight: 500;
             white-space: nowrap;
@@ -400,10 +350,11 @@
         }
 
         .pricing-card li {
-            padding: 0.8rem 0;
+            padding: 1rem 0;
             color: #4a5568;
             position: relative;
             padding-left: 2rem;
+            font-size: 1.1rem;
         }
 
         .pricing-card li::before {
@@ -412,47 +363,7 @@
             left: 0;
             color: #FF7A00;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        /* Reviews */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .review-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-            border-left: 4px solid #FF7A00;
-        }
-
-        .review-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
-        }
-
-        .stars {
-            color: #FFAB00;
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .review-card p {
-            color: #4a5568;
-            line-height: 1.7;
-            font-style: italic;
-            margin-bottom: 1.5rem;
-        }
-
-        .reviewer {
-            font-weight: 600;
-            color: #FF5722;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         /* Kitchen Cars */
@@ -684,6 +595,15 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            header {
+                padding: 5px 0;
+            }
+
+            .logo img {
+                width: 200px;
+                height: 133px;
+            }
+
             .nav-links {
                 display: none;
                 position: absolute;
@@ -705,6 +625,10 @@
                 display: flex;
             }
 
+            .hero {
+                padding: 200px 0 80px; /* モバイル用に調整 */
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -717,7 +641,7 @@
                 font-size: 2.2rem;
             }
 
-            .pricing-card.featured {
+            .pricing-card {
                 transform: none;
             }
 
@@ -726,24 +650,19 @@
             }
 
             .features-grid,
-            .pricing-grid,
             .cars-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .logo img {
-                height: 50px;
-                width: 75px;
-            }
-
-            .logo-text {
-                font-size: 1rem;
             }
         }
 
         @media (max-width: 480px) {
+            .logo img {
+                width: 150px;
+                height: 100px;
+            }
+
             .hero {
-                padding: 120px 0 80px;
+                padding: 150px 0 60px;
             }
 
             .hero h1 {
@@ -761,26 +680,65 @@
             }
 
             .price {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .price-unit {
-                font-size: 0.9rem;
-            }
-
-            .logo img {
-                height: 40px;
-                width: 60px;
-            }
-
-            .logo-text {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
         }
 
-        .logo-icon {
-            font-size: 2rem;
-            margin-right: 0.5rem;
+        .plan-description {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .plan-description p {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-details h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: #1a202c;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+        }
+
+        .duration {
+            font-size: 1.1rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .price-amount {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #FF7A00;
+        }
+
+        .transport-note {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+            font-size: 0.95rem;
+            text-align: center;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -788,8 +746,8 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="#" class="logo">
-                <img src="./img/logo2.jpg" alt="キッチンカーレンタル" width="300" height="200">
+            <a href="/index.html" class="logo">
+                <img src="./img/logo.jpg" alt="O`s kitchen" width="300" height="200">
             </a>
             <ul class="nav-links">
                 <li><a href="#features">サービス</a></li>
@@ -823,24 +781,12 @@
             <p class="section-subtitle">初心者でも安心してキッチンカービジネスを始められる充実のサポート体制で、あなたの成功をバックアップします。</p>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🛠️</div>
-                    <h3>充実の設備</h3>
-                    <p>プロ仕様の調理器具と冷蔵・冷凍設備を完備。衛生管理も万全で、すぐに営業を開始できます。</p>
+                    <h3>キッチンカー出店</h3>
+                    <p>イベントテーマに合わせたメニューで出店を行なっております。<br>様々な出店経験があります。</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📋</div>
-                    <h3>許可取得サポート</h3>
-                    <p>営業許可の取得から保健所対応まで、専門スタッフが全面サポート。面倒な手続きもお任せください。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚗</div>
-                    <h3>メンテナンス込み</h3>
-                    <p>車両のメンテナンスや故障対応も料金に含まれているので、運営に集中できます。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>集客サポート</h3>
-                    <p>SNS活用法やイベント出店のノウハウまで、売上アップのための実践的なサポートを提供します。</p>
+                    <h3>キッチンカーレンタル</h3>
+                    <p>最短1日からレンタルを行なっています。<br>機材はシンプル最小限のため、必要に応じた機材の持ち込みが可能です。</p>
                 </div>
             </div>
         </div>
@@ -879,67 +825,30 @@
     <section id="pricing" class="pricing">
         <div class="container">
             <h2 class="section-title">料金プラン</h2>
-            <p class="section-subtitle">あなたのビジネススタイルと予算に合わせて選べる3つのプラン。すべてのプランで充実したサポートを提供します。</p>
+            <p class="section-subtitle">充実したサポートとプロ仕様の設備で、あなたのキッチンカービジネスを成功に導きます。</p>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3>ベーシック</h3>
-                    <div class="price">¥98,000<span class="price-unit">/月</span></div>
-                    <ul>
-                        <li>基本的な調理設備</li>
-                        <li>営業許可サポート</li>
-                        <li>メンテナンス込み</li>
-                        <li>電話サポート</li>
-                        <li>基本研修プログラム</li>
-                    </ul>
-                </div>
-                <div class="pricing-card featured">
-                    <h3>スタンダード</h3>
-                    <div class="price">¥148,000<span class="price-unit">/月</span></div>
-                    <ul>
-                        <li>充実の調理設備</li>
-                        <li>営業許可サポート</li>
-                        <li>メンテナンス込み</li>
-                        <li>集客サポート</li>
-                        <li>イベント情報提供</li>
-                        <li>月1回の経営相談</li>
-                    </ul>
-                </div>
-                <div class="pricing-card">
-                    <h3>プレミアム</h3>
-                    <div class="price">¥198,000<span class="price-unit">/月</span></div>
-                    <ul>
-                        <li>最新の調理設備</li>
-                        <li>営業許可サポート</li>
-                        <li>メンテナンス込み</li>
-                        <li>専属コンサルタント</li>
-                        <li>マーケティング支援</li>
-                        <li>優先イベント出店権</li>
-                        <li>24時間サポート</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section id="reviews">
-        <div class="container">
-            <h2 class="section-title">お客様の声</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p>「初心者でしたが、サポートが充実していて安心してスタートできました。今では月商100万円を超えています！スタッフの方々の親身なサポートに感謝しています。」</p>
-                    <div class="reviewer">田中様（たこ焼き店経営）</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p>「車両のメンテナンスも込みなので、調理に集中できます。イベント情報も教えてもらえて助かっています。おかげで安定した収入を得られるようになりました。」</p>
-                    <div class="reviewer">佐藤様（クレープ店経営）</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p>「営業許可の取得が不安でしたが、スタッフの方が丁寧にサポートしてくれました。おかげで順調に営業できています。プロのアドバイスは本当に心強いです。」</p>
-                    <div class="reviewer">山田様（カレー店経営）</div>
+                    <h3>キッチンカーレンタルプラン</h3>
+                    <div class="plan-description">
+                        <p>東京都、神奈川県における飲食店営業許可取得済みです。</p>
+                        <p>営業には差し支えありませんが、車両に年季が入っている為、格安で提供しております。</p>
+                    </div>
+                    <div class="pricing-details">
+                        <h4>料金（税込）</h4>
+                        <div class="price-item">
+                            <span class="duration">1日</span>
+                            <span class="price-amount">25,000円</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="duration">1泊2日</span>
+                            <span class="price-amount">40,000円</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="duration">2泊3日</span>
+                            <span class="price-amount">55,000円</span>
+                        </div>
+                    </div>
+                    <p class="transport-note">別途運搬費は距離に応じて見積もりをお出しします。</p>
                 </div>
             </div>
         </div>
@@ -1087,9 +996,7 @@
                     <label for="plan">ご希望プラン</label>
                     <select id="plan" name="plan">
                         <option value="">選択してください</option>
-                        <option value="basic">ベーシック</option>
-                        <option value="standard">スタンダード</option>
-                        <option value="premium">プレミアム</option>
+                        <option value="standard">キッチンカーレンタルプラン</option>
                     </select>
                 </div>
                 <div class="form-group">
